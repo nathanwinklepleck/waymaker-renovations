@@ -120,7 +120,7 @@
       content: ''; position: absolute; bottom: 0; left: 0; right: 0;
       height: 120px; background: linear-gradient(to top, #fff, transparent);
     }
-    .hero-content { position: relative; z-index: 2; max-width: 680px; padding: 120px 0 80px; }
+    .hero-content { position: relative; z-index: 2; max-width: 760px; padding: 120px 0 80px; }
     .hero-badge {
       display: inline-flex; align-items: center; gap: 8px;
       background: rgba(255,255,255,.1); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
@@ -157,7 +157,11 @@
     }
     .trust-icon svg { width: 20px; height: 20px; fill: var(--accent); }
     .trust-item:hover .trust-icon { transform: scale(1.1); }
-    .hero-trust .trust-items { justify-content: flex-start; gap: 28px; }
+    .hero-trust .trust-items {
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: nowrap;
+    }
     .hero-trust .trust-item { color: rgba(255,255,255,.82); }
     .hero-trust .trust-icon {
       background: rgba(18, 28, 47, .72);
@@ -451,7 +455,11 @@
       .hero-content { padding: 100px 0 60px; }
       .hero h1 { font-size: 2.4rem; }
       .hero-trust { margin-top: 40px; padding-top: 24px; }
-      .hero-trust .trust-items { gap: 24px; }
+      .hero-trust .trust-items {
+        justify-content: flex-start;
+        gap: 24px;
+        flex-wrap: wrap;
+      }
       .about-grid { grid-template-columns: 1fr; gap: 40px; }
       .about-img-accent { position: static; width: 100%; border: none; margin-top: 16px; }
       .areas-regions { flex-direction: column; }
