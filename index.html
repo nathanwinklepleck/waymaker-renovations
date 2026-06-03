@@ -981,9 +981,9 @@
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(data),
         });
-        const result = await res.json();
+        const result = await res.json().catch(() => ({}));
 
-        if (result.success) {
+        if (res.ok && result.success) {
           btn.innerHTML = 'Message Sent! ✓';
           btn.style.background = '#21304e';
           form.reset();
@@ -993,10 +993,10 @@
             btn.disabled = false;
           }, 4000);
         } else {
-          throw new Error(result.error || 'Unknown error');
+          throw new Error(result.error || 'Unable to send your request right now.');
         }
       } catch (err) {
-        btn.innerHTML = 'Something went wrong — please call us directly';
+        btn.innerHTML = 'Could not send right now - please call us directly';
         btn.style.background = '#c0392b';
         setTimeout(() => {
           btn.innerHTML = originalHTML;
