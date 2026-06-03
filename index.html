@@ -135,17 +135,13 @@
     .hero h1 em { font-style: normal; color: var(--accent); }
     .hero p { font-size: 1.15rem; color: rgba(255,255,255,.8); line-height: 1.7; margin-bottom: 36px; max-width: 520px; }
     .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
-    .hero-stats {
-      display: flex; gap: 48px; margin-top: 60px; padding-top: 40px;
-      border-top: 1px solid rgba(255,255,255,.15);
+    .hero-trust {
+      margin-top: 56px;
+      padding-top: 34px;
+      border-top: 1px solid rgba(255,255,255,.18);
     }
-    .hero-stat h3 { font-size: 2rem; font-weight: 800; color: var(--accent); }
-    .hero-stat p { font-size: .85rem; color: rgba(255,255,255,.6); margin-top: 4px; }
 
     /* ===== TRUST BAR ===== */
-    .trust-bar {
-      background: var(--bg-warm); padding: 40px 0; border-bottom: 1px solid #eee;
-    }
     .trust-items {
       display: flex; justify-content: center; align-items: center;
       gap: 48px; flex-wrap: wrap;
@@ -161,6 +157,12 @@
     }
     .trust-icon svg { width: 20px; height: 20px; fill: var(--accent); }
     .trust-item:hover .trust-icon { transform: scale(1.1); }
+    .hero-trust .trust-items { justify-content: flex-start; gap: 28px; }
+    .hero-trust .trust-item { color: rgba(255,255,255,.82); }
+    .hero-trust .trust-icon {
+      background: rgba(18, 28, 47, .72);
+      border: 1px solid rgba(255,255,255,.2);
+    }
 
     /* ===== SERVICES ===== */
     .services { background: #fff; }
@@ -448,7 +450,8 @@
       .hamburger { display: flex; }
       .hero-content { padding: 100px 0 60px; }
       .hero h1 { font-size: 2.4rem; }
-      .hero-stats { gap: 28px; flex-wrap: wrap; }
+      .hero-trust { margin-top: 40px; padding-top: 24px; }
+      .hero-trust .trust-items { gap: 24px; }
       .about-grid { grid-template-columns: 1fr; gap: 40px; }
       .about-img-accent { position: static; width: 100%; border: none; margin-top: 16px; }
       .areas-regions { flex-direction: column; }
@@ -521,47 +524,33 @@
           </a>
           <a href="#services" class="btn btn-outline">View Services &amp; Gallery</a>
         </div>
-        <div class="hero-stats">
-          <div class="hero-stat">
-            <h3>✓</h3>
-            <p>Licensed &amp; Insured</p>
+        <div class="hero-trust">
+          <div class="trust-items">
+            <div class="trust-item">
+              <div class="trust-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+              </div>
+              Licensed &amp; Insured
+            </div>
+            <div class="trust-item">
+              <div class="trust-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+              5-Star Rated
+            </div>
+            <div class="trust-item">
+              <div class="trust-icon">
+                <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+              </div>
+              Family Owned
+            </div>
+            <div class="trust-item">
+              <div class="trust-icon">
+                <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/></svg>
+              </div>
+              Free Consultations
+            </div>
           </div>
-          <div class="hero-stat">
-            <h3>✓</h3>
-            <p>Free Consultations</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== TRUST BAR ===== -->
-  <section class="trust-bar">
-    <div class="container">
-      <div class="trust-items">
-        <div class="trust-item">
-          <div class="trust-icon">
-            <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
-          </div>
-          Licensed & Insured
-        </div>
-        <div class="trust-item">
-          <div class="trust-icon">
-            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          </div>
-          5-Star Rated
-        </div>
-        <div class="trust-item">
-          <div class="trust-icon">
-            <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
-          </div>
-          Family Owned
-        </div>
-        <div class="trust-item">
-          <div class="trust-icon">
-            <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/></svg>
-          </div>
-          Free Consultations
         </div>
       </div>
     </div>
