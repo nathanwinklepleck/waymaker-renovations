@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Waymaker Renovations | Kitchen Remodeling Experts in Avon, Indiana</title>
-  <meta name="description" content="Waymaker Renovations — Avon, Indiana's trusted kitchen remodeling contractor. Custom cabinetry, countertops, full kitchen renovations. Free estimates. Licensed & insured.">
+  <title>Waymaker Renovations | Kitchen, Bath & Whole-Home Remodeling | Carmel, Fishers, Westfield & Greater Indianapolis</title>
+  <meta name="description" content="Waymaker Renovations LLC — kitchen & bathroom remodels, flooring, trim, tile, decks, and full interior renovations serving Carmel, Fishers, Westfield, Noblesville, Avon, Brownsburg, Plainfield, and surrounding Indiana communities. Free estimates. Licensed & insured.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
@@ -25,12 +25,12 @@
 
     /* ===== VARIABLES ===== */
     :root {
-      --primary: #1b3a2d;
-      --primary-light: #2d5e47;
-      --accent: #c8913a;
-      --accent-hover: #b07e2f;
-      --bg-warm: #f9f6f1;
-      --bg-dark: #111a15;
+      --primary: #21304e;
+      --primary-light: #2e4370;
+      --accent: #a88b68;
+      --accent-hover: #8f7455;
+      --bg-warm: #f7f6f3;
+      --bg-dark: #111827;
       --text-muted: #5a5a5a;
       --text-light: #8a8a8a;
       --radius: 8px;
@@ -77,11 +77,9 @@
     }
     .navbar .container { display: flex; align-items: center; justify-content: space-between; }
     .nav-logo {
-      font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700;
-      color: #fff; transition: color .3s;
+      display: flex; align-items: center;
     }
-    .nav-logo span { color: var(--accent); }
-    .navbar.scrolled .nav-logo { color: var(--primary); }
+    .nav-logo img { height: 96px; width: auto; transition: all .3s; }
     .nav-links { display: flex; gap: 32px; align-items: center; }
     .nav-links a {
       color: rgba(255,255,255,.85); font-size: .9rem; font-weight: 500;
@@ -114,8 +112,8 @@
     /* ===== HERO ===== */
     .hero {
       position: relative; min-height: 100vh; display: flex; align-items: center;
-      background: linear-gradient(165deg, rgba(11,25,18,.85) 0%, rgba(27,58,45,.75) 100%),
-        url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1920&q=80') center/cover no-repeat;
+      background: linear-gradient(165deg, rgba(33,48,78,.88) 0%, rgba(46,67,112,.72) 100%),
+        url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1920&q=80&sat=-100') center/cover no-repeat;
       overflow: hidden;
     }
     .hero::after {
@@ -166,7 +164,13 @@
     .services { background: #fff; }
     .services-header { text-align: center; margin-bottom: 64px; }
     .services-header .section-subtitle { margin: 0 auto; }
-    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 28px; }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 28px; }
+    .service-card--featured { border-color: var(--accent); background: linear-gradient(135deg, #fff 80%, rgba(200,145,58,.06)); position: relative; }
+    .service-badge {
+      position: absolute; top: 16px; right: 16px;
+      background: var(--accent); color: #fff; font-size: .7rem; font-weight: 700;
+      letter-spacing: 1px; text-transform: uppercase; padding: 4px 10px; border-radius: 50px;
+    }
     .service-card {
       background: var(--bg-warm); border-radius: 12px; padding: 40px 32px;
       transition: all .3s ease; border: 1px solid transparent; position: relative; overflow: hidden;
@@ -224,6 +228,8 @@
     .portfolio-header { text-align: center; margin-bottom: 64px; }
     .portfolio-header .section-subtitle { margin: 0 auto; }
     .portfolio-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .portfolio-item:nth-child(1) { grid-column: span 2; }
+    .portfolio-item:nth-child(4) { grid-column: span 2; }
     .portfolio-item {
       position: relative; border-radius: 12px; overflow: hidden;
       aspect-ratio: 4/3; cursor: pointer;
@@ -263,10 +269,45 @@
     .process-step h4 { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
     .process-step p { font-size: .9rem; color: rgba(255,255,255,.6); line-height: 1.6; }
 
+    /* ===== SERVICE AREAS ===== */
+    .areas { background: var(--bg-warm); }
+    .areas-header { text-align: center; margin-bottom: 64px; }
+    .areas-header .section-subtitle { margin: 0 auto; }
+    .areas-regions {
+      display: flex; gap: 0; align-items: stretch;
+      background: #fff; border-radius: 16px; box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .areas-region { flex: 1; padding: 48px 40px; }
+    .areas-divider { width: 1px; background: #f0f0f0; flex-shrink: 0; }
+    .areas-region-label {
+      display: flex; align-items: center; gap: 10px;
+      font-size: .8rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 24px;
+    }
+    .areas-region-label svg { width: 16px; height: 16px; fill: var(--accent); flex-shrink: 0; }
+    .areas-list { list-style: none; padding: 0; }
+    .areas-list li {
+      padding: 10px 0; border-bottom: 1px solid #f4f4f4;
+      font-size: 1rem; font-weight: 500; color: var(--primary);
+    }
+    .areas-list li:last-child { border-bottom: none; }
+    .areas-cta { text-align: center; margin-top: 40px; color: var(--text-muted); font-size: .95rem; }
+    .areas-cta a { color: var(--accent); font-weight: 600; }
+    .areas-cta a:hover { text-decoration: underline; }
+
     /* ===== TESTIMONIALS ===== */
     .testimonials { background: var(--bg-warm); }
-    .testimonials-header { text-align: center; margin-bottom: 64px; }
+    .testimonials-header { text-align: center; margin-bottom: 48px; }
     .testimonials-header .section-subtitle { margin: 0 auto; }
+    .testimonials-placeholder {
+      background: #fff; border-radius: 16px; padding: 64px 40px;
+      text-align: center; border: 2px dashed #e8e0d8; max-width: 560px; margin: 0 auto;
+    }
+    .testimonials-placeholder .placeholder-icon { margin-bottom: 20px; }
+    .testimonials-placeholder h3 { font-size: 1.3rem; color: var(--primary); margin-bottom: 12px; }
+    .testimonials-placeholder p { color: var(--text-muted); line-height: 1.7; }
+    .testimonials-placeholder a { color: var(--accent); font-weight: 600; }
     .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 28px; }
     .testimonial-card {
       background: #fff; border-radius: 12px; padding: 36px;
@@ -342,7 +383,7 @@
     /* ===== FOOTER ===== */
     .footer { background: var(--bg-dark); color: rgba(255,255,255,.6); padding: 64px 0 32px; }
     .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
-    .footer-brand .nav-logo { font-size: 1.4rem; margin-bottom: 16px; display: inline-block; }
+    .footer-brand .nav-logo { margin-bottom: 16px; display: inline-block; }
     .footer-brand p { font-size: .9rem; line-height: 1.7; max-width: 300px; }
     .footer h4 { color: #fff; font-size: .9rem; font-weight: 700; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; }
     .footer ul li { margin-bottom: 10px; }
@@ -392,6 +433,10 @@
       .about-badge { top: 16px; right: 16px; }
       .portfolio-grid { grid-template-columns: 1fr; }
       .portfolio-item:nth-child(1) { grid-column: span 1; }
+      .portfolio-item:nth-child(4) { grid-column: span 1; }
+      .areas-regions { flex-direction: column; }
+      .areas-divider { width: 100%; height: 1px; }
+      .areas-region { padding: 32px 24px; }
       .services-grid { grid-template-columns: 1fr; }
       .testimonials-grid { grid-template-columns: 1fr; }
       .contact-grid { grid-template-columns: 1fr; }
@@ -407,12 +452,13 @@
   <!-- ===== NAVBAR ===== -->
   <nav class="navbar" id="navbar">
     <div class="container">
-      <a href="#" class="nav-logo">Waymaker<span>.</span></a>
+      <a href="#" class="nav-logo"><img src="white-logo.png" alt="Waymaker Renovations"></a>
       <div class="nav-links">
         <a href="#services">Services</a>
         <a href="#about">About</a>
         <a href="#portfolio">Portfolio</a>
         <a href="#process">Process</a>
+        <a href="#areas">Areas</a>
         <a href="#testimonials">Reviews</a>
         <a href="#contact" class="nav-cta">Free Estimate</a>
       </div>
@@ -429,6 +475,7 @@
     <a href="#about" onclick="closeMobile()">About</a>
     <a href="#portfolio" onclick="closeMobile()">Portfolio</a>
     <a href="#process" onclick="closeMobile()">Process</a>
+    <a href="#areas" onclick="closeMobile()">Areas</a>
     <a href="#testimonials" onclick="closeMobile()">Reviews</a>
     <a href="#contact" onclick="closeMobile()" class="btn btn-primary">Free Estimate</a>
   </div>
@@ -439,10 +486,10 @@
       <div class="hero-content">
         <div class="hero-badge">
           <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          Avon, Indiana's Trusted Kitchen Experts
+          Indianapolis North &amp; West Suburbs — Licensed &amp; Insured
         </div>
-        <h1>We Build Kitchens That Become the <em>Heart of Your Home</em></h1>
-        <p>From outdated to outstanding — Waymaker Renovations delivers expert kitchen remodeling with quality craftsmanship, transparent pricing, and results your family will love for years to come.</p>
+        <h1>Renovations That Make Your House Feel Like <em>Home</em></h1>
+        <p>From kitchen and bathroom remodels to flooring, trim, tile, decks, and full interior updates — Waymaker Renovations delivers quality craftsmanship and honest service across the greater Indianapolis area.</p>
         <div class="hero-buttons">
           <a href="#contact" class="btn btn-primary">
             Get Your Free Estimate
@@ -452,20 +499,12 @@
         </div>
         <div class="hero-stats">
           <div class="hero-stat">
-            <h3>200+</h3>
-            <p>Kitchens Renovated</p>
+            <h3>✓</h3>
+            <p>Licensed &amp; Insured</p>
           </div>
           <div class="hero-stat">
-            <h3>15+</h3>
-            <p>Years Experience</p>
-          </div>
-          <div class="hero-stat">
-            <h3>4.9★</h3>
-            <p>Google Rating</p>
-          </div>
-          <div class="hero-stat">
-            <h3>100%</h3>
-            <p>Licensed & Insured</p>
+            <h3>✓</h3>
+            <p>Free Consultations</p>
           </div>
         </div>
       </div>
@@ -509,51 +548,81 @@
     <div class="container">
       <div class="services-header fade-up">
         <span class="section-label">What We Do</span>
-        <h2 class="section-title">Complete Kitchen Renovation Services</h2>
-        <p class="section-subtitle">Every detail matters. We handle every aspect of your kitchen remodel — from initial design to the final walkthrough.</p>
+        <h2 class="section-title">What We Build &amp; Renovate</h2>
+        <p class="section-subtitle">From a single room refresh to a full interior renovation — we handle it all with clean design, quality materials, and craftsmanship you'll notice every day.</p>
       </div>
       <div class="services-grid">
-        <div class="service-card fade-up">
+        <div class="service-card service-card--featured fade-up">
+          <div class="service-badge">Most Popular</div>
           <div class="service-icon">
-            <svg viewBox="0 0 24 24"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M18 4H6C4.9 4 4 4.9 4 6v2h16V6c0-1.1-.9-2-2-2zM4 18c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-8H4v8zm6-5h4v2h-4v-2z"/></svg>
           </div>
-          <h3>Custom Kitchen Design</h3>
-          <p>We work with you to design a layout that maximizes function and beauty. From open-concept plans to galley kitchens, every design is tailored to your family's lifestyle and the architectural character of your Avon home.</p>
+          <h3>Kitchen Remodels</h3>
+          <p>Full gut renovations or targeted refreshes — new layouts, custom cabinetry, countertops, backsplashes, and lighting designed around how your family actually cooks and lives.</p>
+        </div>
+        <div class="service-card service-card--featured fade-up">
+          <div class="service-badge">Most Popular</div>
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M7 6h10v2H7zm-2 4h14v2H5zm3 4h8v2H8zm-5 4h18v2H3z"/></svg>
+          </div>
+          <h3>Bathroom Remodels</h3>
+          <p>Tile showers, soaking tubs, vanities, flooring, and fixtures — we transform dated bathrooms into clean, functional spaces that feel like they belong in a newer home.</p>
         </div>
         <div class="service-card fade-up">
           <div class="service-icon">
             <svg viewBox="0 0 24 24"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/></svg>
           </div>
-          <h3>Cabinet Installation & Refacing</h3>
-          <p>Whether you need brand-new custom cabinetry or want to refresh your existing cabinets with modern doors and hardware, we deliver stunning results. Soft-close hinges, dovetail joints, and premium finishes come standard.</p>
-        </div>
-        <div class="service-card fade-up">
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-4-4h-4v-2h4v-2h-4V9h4V7H9v10h6z"/></svg>
-          </div>
-          <h3>Countertops & Backsplashes</h3>
-          <p>Granite, quartz, marble, and butcher block — we source and install premium countertops with precision seaming. Pair it with a hand-laid tile backsplash that ties the whole room together.</p>
-        </div>
-        <div class="service-card fade-up">
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24"><path d="M13 2.05v3.03c3.39.49 6 3.39 6 6.92 0 .9-.18 1.75-.48 2.54l2.6 1.53c.56-1.24.88-2.62.88-4.07 0-5.18-3.95-9.45-9-9.95zM12 19c-3.87 0-7-3.13-7-7 0-3.53 2.61-6.43 6-6.92V2.05c-5.06.5-9 4.76-9 9.95 0 5.52 4.47 10 9.99 10 3.31 0 6.24-1.61 8.06-4.09l-2.6-1.53C16.17 17.98 14.21 19 12 19z"/></svg>
-          </div>
-          <h3>Plumbing & Fixtures</h3>
-          <p>New sink installations, faucet upgrades, dishwasher hookups, and gas line work for ranges. We coordinate all plumbing so everything is up to code and functioning flawlessly on day one.</p>
-        </div>
-        <div class="service-card fade-up">
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24"><path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7z"/></svg>
-          </div>
-          <h3>Electrical & Lighting</h3>
-          <p>Under-cabinet LEDs, pendant lights, recessed cans, and updated outlets and circuits. We'll light up your kitchen beautifully while ensuring your electrical system meets modern safety standards.</p>
+          <h3>Interior Renovations</h3>
+          <p>Open a wall, reconfigure a layout, or update the feel of an entire floor — we help homeowners rethink spaces and then build them out with care.</p>
         </div>
         <div class="service-card fade-up">
           <div class="service-icon">
             <svg viewBox="0 0 24 24"><path d="M11 2v20c-5.07-.5-9-4.79-9-10s3.93-9.5 9-10zm2 0v9h9c-.47-4.69-4.24-8.47-9-9zm0 11v9c4.75-.54 8.53-4.31 9-9h-9z"/></svg>
           </div>
-          <h3>Flooring & Finishing</h3>
-          <p>Hardwood, luxury vinyl plank, tile — we install durable kitchen flooring that withstands daily life while looking incredible. Complete with trim, transitions, and paint to finish the space perfectly.</p>
+          <h3>Flooring Installation</h3>
+          <p>Hardwood, luxury vinyl plank, tile, and laminate — we install beautiful, durable floors throughout your home, including proper subfloor prep and transitions.</p>
+        </div>
+        <div class="service-card fade-up">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M3 3h18v2H3zm0 4h12v2H3zm0 4h18v2H3zm0 4h12v2H3zm0 4h18v2H3z"/></svg>
+          </div>
+          <h3>Trim &amp; Finish Carpentry</h3>
+          <p>Crown molding, baseboard, casing, built-ins, and accent walls — the finish details that elevate a renovation from "nice" to "wow."</p>
+        </div>
+        <div class="service-card fade-up">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-4-4h-4v-2h4v-2h-4V9h4V7H9v10h6z"/></svg>
+          </div>
+          <h3>Tile &amp; Backsplashes</h3>
+          <p>Subway tile, mosaic, large-format stone — we hand-lay tile in kitchens, baths, mudrooms, and entryways with precise grout lines and a clean finished edge.</p>
+        </div>
+        <div class="service-card fade-up">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg>
+          </div>
+          <h3>Decks &amp; Outdoor Living</h3>
+          <p>New deck builds, deck replacements, and outdoor spaces designed to extend the livable square footage of your home and hold up to Indiana seasons.</p>
+        </div>
+        <div class="service-card fade-up">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M9.5 6.5v3h-3v-3h3M11 5H5v6h6V5zm-1.5 9.5v3h-3v-3h3M11 13H5v6h6v-6zm6.5-6.5v3h-3v-3h3M19 5h-6v6h6V5zm-6 8h1.5v1.5H13V13zm1.5 1.5H16V16h-1.5v-1.5zM16 13h1.5v1.5H16V13zm-3 3h1.5v1.5H13V16zm1.5 1.5H16V19h-1.5v-1.5zM16 16h1.5v1.5H16V16zm1.5-1.5H19V16h-1.5v-1.5zM19 13h-1.5v-1.5H19V13v0zm0 4.5h-1.5V16H19v1.5zM19 19h-1.5v-1.5H19V19z"/></svg>
+          </div>
+          <h3>Drywall, Paint &amp; Repair</h3>
+          <p>Patch, texture, hang, and paint — from a single damaged wall to prepping an entire room for renovation, we handle the work that holds everything else together.</p>
+        </div>
+        <div class="service-card fade-up">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M13.5 6.5l1 1-9.5 9.5-1-1 9.5-9.5zm5.21-.29l-1.43-1.43c-.39-.39-1.02-.39-1.41 0L14.7 6.4l2.83 2.83 1.17-1.17c.4-.39.4-1.02.01-1.41zM3 17.25V21h3.75L17.81 9.93l-2.75-2.75L3 17.25z"/></svg>
+          </div>
+          <h3>Handyman &amp; Punch-List</h3>
+          <p>Smaller jobs, fix-up lists, and project wrap-ups — if your home has a list of things that need attention, we're the team to knock it out efficiently and correctly.</p>
+        </div>
+        <div class="service-card fade-up">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/></svg>
+          </div>
+          <h3>Design &amp; Planning Help</h3>
+          <p>Not sure where to start? We'll walk through your space, talk through options and layouts, and help you build a clear plan before any money is spent on materials or labor.</p>
         </div>
       </div>
     </div>
@@ -564,7 +633,7 @@
     <div class="container">
       <div class="about-grid">
         <div class="about-images fade-up">
-          <img src="https://images.unsplash.com/photo-1556909114-44e3e70034e2?w=800&q=80" alt="Kitchen renovation in Avon Indiana" class="about-img-main">
+          <img src="photos/whole-house/DSC_7923-HDR.jpeg" alt="Renovation work by Waymaker Renovations" class="about-img-main">
           <div class="about-badge">
             <h4>15+</h4>
             <p>Years</p>
@@ -573,7 +642,7 @@
         <div class="about-content fade-up">
           <span class="section-label">About Waymaker</span>
           <h2 class="section-title">Built on Craftsmanship, Driven by Integrity</h2>
-          <p class="section-subtitle">Waymaker Renovations was founded right here in Avon, Indiana with a simple mission: deliver kitchen renovations that exceed expectations — on time and on budget. We treat every home like it's our own.</p>
+          <p class="section-subtitle">Waymaker Renovations is a locally based renovation and remodeling company serving the north and west Indianapolis suburbs. Our mission is simple: deliver renovations that exceed expectations — on time, on budget, and built to last. We treat every home like it’s our own.</p>
           <div class="about-features">
             <div class="about-feature">
               <div class="about-feature-icon">
@@ -598,13 +667,13 @@
                 <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
               </div>
               <div>
-                <h4>Local, Family-Owned Team</h4>
-                <p>Your neighbors in Avon — we're invested in this community and our reputation.</p>
+                <h4>Design Partnership</h4>
+                <p>We help you think through ideas, layouts, and options before any money is spent — no pressure, just honest guidance.</p>
               </div>
             </div>
           </div>
           <a href="#contact" class="btn btn-dark">
-            Let's Talk About Your Kitchen
+            Let’s Talk About Your Project
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
         </div>
@@ -617,36 +686,43 @@
     <div class="container">
       <div class="portfolio-header fade-up">
         <span class="section-label">Our Work</span>
-        <h2 class="section-title">Recent Kitchen Transformations</h2>
-        <p class="section-subtitle">See what's possible. These are real kitchens we've renovated for families across Avon and the greater Indianapolis area.</p>
+        <h2 class="section-title">Recent Transformations</h2>
+        <p class="section-subtitle">Real projects, real results — work we've completed for homeowners across the greater Indianapolis area.</p>
       </div>
       <div class="portfolio-grid">
         <div class="portfolio-item fade-up">
-          <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&q=80" alt="Modern white kitchen with island" loading="lazy">
+          <img src="photos/whole-house/DSC_7923-HDR.jpeg" alt="Outdoor renovation project" loading="lazy">
           <div class="portfolio-overlay">
-            <h4>Modern Farmhouse Kitchen</h4>
-            <p>Full gut-renovation with shaker cabinets & quartz island</p>
+            <h4>Outdoor Living Space</h4>
+            <p>Deck build &amp; exterior renovation</p>
           </div>
         </div>
         <div class="portfolio-item fade-up">
-          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80" alt="Luxury dark kitchen cabinets" loading="lazy">
+          <img src="photos/whole-house/IMG_4311.jpeg" alt="Interior renovation and trim work" loading="lazy">
           <div class="portfolio-overlay">
-            <h4>Contemporary Dark Kitchen</h4>
-            <p>Custom walnut cabinetry & marble countertops</p>
+            <h4>Interior Renovation</h4>
+            <p>Trim, flooring &amp; finish carpentry</p>
           </div>
         </div>
         <div class="portfolio-item fade-up">
-          <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=800&q=80" alt="Open concept kitchen renovation" loading="lazy">
+          <img src="photos/whole-house/IMG_4419.jpeg" alt="Interior living space renovation" loading="lazy">
           <div class="portfolio-overlay">
-            <h4>Open-Concept Remodel</h4>
-            <p>Wall removal, new layout, & custom lighting</p>
+            <h4>Living Space Refresh</h4>
+            <p>Full interior update &amp; paint</p>
           </div>
         </div>
         <div class="portfolio-item fade-up">
-          <img src="https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=800&q=80" alt="Classic white kitchen Avon IN" loading="lazy">
+          <img src="photos/whole-house/IMG_4518.jpeg" alt="Bathroom tile work" loading="lazy">
           <div class="portfolio-overlay">
-            <h4>Classic White Kitchen</h4>
-            <p>Bright, timeless design with subway tile backsplash</p>
+            <h4>Bathroom Remodel</h4>
+            <p>Custom tile &amp; fixture installation</p>
+          </div>
+        </div>
+        <div class="portfolio-item fade-up">
+          <img src="photos/whole-house/IMG_4539.jpeg" alt="Kitchen and bath renovation" loading="lazy">
+          <div class="portfolio-overlay">
+            <h4>Kitchen &amp; Bath Update</h4>
+            <p>Cabinetry, countertops &amp; tile</p>
           </div>
         </div>
       </div>
@@ -658,7 +734,7 @@
     <div class="container">
       <div class="process-header fade-up">
         <span class="section-label">How It Works</span>
-        <h2 class="section-title">Your Kitchen Renovation in 4 Simple Steps</h2>
+        <h2 class="section-title">Your Renovation in 4 Simple Steps</h2>
         <p class="section-subtitle">We make the remodeling process stress-free from start to finish.</p>
       </div>
       <div class="process-grid">
@@ -686,66 +762,74 @@
     </div>
   </section>
 
+  <!-- ===== SERVICE AREAS ===== -->
+  <section class="areas section-padding" id="areas">
+    <div class="container">
+      <div class="areas-header fade-up">
+        <span class="section-label">Where We Work</span>
+        <h2 class="section-title">Serving the North &amp; West Indianapolis Suburbs</h2>
+        <p class="section-subtitle">We're locally based and work throughout Hamilton and Hendricks counties, as well as surrounding communities across central Indiana.</p>
+      </div>
+      <div class="areas-regions fade-up">
+        <div class="areas-region">
+          <div class="areas-region-label">
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            North Suburbs — Hamilton County
+          </div>
+          <ul class="areas-list">
+            <li>Carmel, IN</li>
+            <li>Fishers, IN</li>
+            <li>Westfield, IN</li>
+            <li>Noblesville, IN</li>
+          </ul>
+        </div>
+        <div class="areas-divider"></div>
+        <div class="areas-region">
+          <div class="areas-region-label">
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            West Suburbs — Hendricks County
+          </div>
+          <ul class="areas-list">
+            <li>Avon, IN</li>
+            <li>Brownsburg, IN</li>
+            <li>Plainfield, IN</li>
+          </ul>
+        </div>
+        <div class="areas-divider"></div>
+        <div class="areas-region">
+          <div class="areas-region-label">
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            &amp; Surrounding Areas
+          </div>
+          <ul class="areas-list">
+            <li>Indianapolis, IN</li>
+            <li>Zionsville, IN</li>
+            <li>Lebanon, IN</li>
+            <li>Greenfield, IN</li>
+          </ul>
+        </div>
+      </div>
+      <div class="areas-cta fade-up">
+        <p>Not sure if we serve your area? <a href="#contact">Reach out and ask</a> — we're happy to travel for the right project.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- ===== TESTIMONIALS ===== -->
   <section class="testimonials section-padding" id="testimonials">
     <div class="container">
       <div class="testimonials-header fade-up">
         <span class="section-label">Client Reviews</span>
-        <h2 class="section-title">What Avon Homeowners Are Saying</h2>
-        <p class="section-subtitle">Don't just take our word for it — hear from families who trusted us with their kitchen renovations.</p>
+        <h2 class="section-title">What Our Clients Are Saying</h2>
+        <p class="section-subtitle">We let our work speak for itself. Reviews will be added here as we collect them — ask us directly for references from past projects.</p>
       </div>
-      <div class="testimonials-grid">
-        <div class="testimonial-card fade-up">
-          <div class="testimonial-stars">
-            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          </div>
-          <blockquote>"Waymaker completely transformed our kitchen. From the first meeting to the final walkthrough, everything was professional and on schedule. Our new kitchen is the heart of our home now — we couldn't be happier."</blockquote>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">JM</div>
-            <div>
-              <div class="testimonial-name">Jennifer M.</div>
-              <div class="testimonial-loc">Avon, IN</div>
-            </div>
-          </div>
+      <!-- TODO: Replace with real client reviews -->
+      <div class="testimonials-placeholder fade-up">
+        <div class="placeholder-icon">
+          <svg viewBox="0 0 24 24" width="48" height="48"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 12l-3-3H7V9h3l3-3 3 3h3v2h-3l-3 3z" fill="var(--accent)" opacity=".3"/></svg>
         </div>
-        <div class="testimonial-card fade-up">
-          <div class="testimonial-stars">
-            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          </div>
-          <blockquote>"We interviewed three contractors and Waymaker was the clear winner. Honest pricing, great communication, and the craftsmanship is top-notch. They even finished two days early. Highly recommend!"</blockquote>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">DT</div>
-            <div>
-              <div class="testimonial-name">David T.</div>
-              <div class="testimonial-loc">Avon, IN</div>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card fade-up">
-          <div class="testimonial-stars">
-            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          </div>
-          <blockquote>"I was nervous about a full kitchen renovation, but the Waymaker team put me at ease. They walked me through every decision, kept the workspace clean, and delivered a kitchen that looks straight out of a magazine."</blockquote>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">SR</div>
-            <div>
-              <div class="testimonial-name">Sarah R.</div>
-              <div class="testimonial-loc">Brownsburg, IN</div>
-            </div>
-          </div>
-        </div>
+        <h3>Reviews Coming Soon</h3>
+        <p>We're actively collecting reviews from completed projects. In the meantime, <a href="#contact">contact us</a> and we'll happily connect you with past clients.</p>
       </div>
     </div>
   </section>
@@ -754,13 +838,13 @@
   <section class="cta-section">
     <div class="container fade-up">
       <span class="section-label">Ready to Get Started?</span>
-      <h2 class="section-title" style="color:#fff">Your Dream Kitchen Is One Call Away</h2>
-      <p>Schedule a free, no-obligation in-home consultation. We'll listen to your ideas, measure your space, and provide a detailed estimate — absolutely free.</p>
+      <h2 class="section-title" style="color:#fff">Let's Plan Your Next Project</h2>
+      <p>Schedule a free, no-obligation in-home consultation. We'll listen to your ideas, walk through your space, and help you build a clear plan — absolutely free.</p>
       <div class="cta-buttons">
         <a href="#contact" class="btn btn-primary">Schedule Free Consultation</a>
-        <a href="tel:+13175550199" class="btn btn-outline">Call Us Now</a>
+        <a href="tel:+14632239675" class="btn btn-outline">Call Us Now</a>
       </div>
-      <a href="tel:+13175550199" class="cta-phone">(317) 555-0199</a>
+      <a href="tel:+14632239675" class="cta-phone">(463) 223-9675</a>
     </div>
   </section>
 
@@ -778,7 +862,7 @@
             </div>
             <div>
               <h4>Location</h4>
-              <p>Serving Avon, Brownsburg, Plainfield,<br>and greater Indianapolis, IN</p>
+              <p>Serving Carmel, Fishers, Westfield, Noblesville,<br>Avon, Brownsburg, Plainfield &amp; surrounding Indiana communities</p>
             </div>
           </div>
           <div class="contact-detail">
@@ -787,7 +871,7 @@
             </div>
             <div>
               <h4>Phone</h4>
-              <p>(317) 555-0199</p>
+              <p>(463) 223-9675</p>
             </div>
           </div>
           <div class="contact-detail">
@@ -828,17 +912,23 @@
               </div>
               <div class="form-group">
                 <label for="phone">Phone *</label>
-                <input type="tel" id="phone" name="phone" required placeholder="(317) 555-0000">
+                <input type="tel" id="phone" name="phone" required placeholder="(463) 223-9675">
               </div>
             </div>
             <div class="form-group">
               <label for="service">What Are You Interested In?</label>
               <select id="service" name="service">
                 <option value="">Select a service...</option>
-                <option value="full-kitchen">Full Kitchen Renovation</option>
-                <option value="cabinets">Cabinet Installation / Refacing</option>
-                <option value="countertops">Countertops & Backsplash</option>
-                <option value="design">Kitchen Design Consultation</option>
+                <option value="kitchen">Kitchen Remodel</option>
+                <option value="bathroom">Bathroom Remodel</option>
+                <option value="interior">Interior Renovation</option>
+                <option value="flooring">Flooring Installation</option>
+                <option value="trim">Trim &amp; Finish Carpentry</option>
+                <option value="tile">Tile &amp; Backsplash</option>
+                <option value="deck">Deck &amp; Outdoor Living</option>
+                <option value="drywall">Drywall, Paint &amp; Repair</option>
+                <option value="handyman">Handyman &amp; Punch-List</option>
+                <option value="planning">Design &amp; Planning Help</option>
                 <option value="other">Other / Not Sure Yet</option>
               </select>
             </div>
@@ -861,17 +951,18 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="#" class="nav-logo" style="color:#fff">Waymaker<span>.</span></a>
-          <p>Avon, Indiana's trusted kitchen renovation experts. Licensed, insured, and committed to exceptional craftsmanship on every project.</p>
+          <a href="#" class="nav-logo"><img src="white-logo.png" alt="Waymaker Renovations" style="height:48px;width:auto;"></a>
+          <p>Locally based renovation and remodeling company serving the north and west Indianapolis suburbs. Licensed, insured, and committed to quality craftsmanship on every project.</p>
         </div>
         <div>
           <h4>Services</h4>
           <ul>
-            <li><a href="#services">Kitchen Design</a></li>
-            <li><a href="#services">Cabinet Installation</a></li>
-            <li><a href="#services">Countertops</a></li>
-            <li><a href="#services">Plumbing & Fixtures</a></li>
-            <li><a href="#services">Electrical & Lighting</a></li>
+            <li><a href="#services">Kitchen Remodels</a></li>
+            <li><a href="#services">Bathroom Remodels</a></li>
+            <li><a href="#services">Interior Renovations</a></li>
+            <li><a href="#services">Flooring Installation</a></li>
+            <li><a href="#services">Trim &amp; Finish Carpentry</a></li>
+            <li><a href="#services">Decks &amp; Outdoor Living</a></li>
           </ul>
         </div>
         <div>
@@ -887,17 +978,18 @@
         <div>
           <h4>Service Areas</h4>
           <ul>
-            <li><a href="#">Avon, IN</a></li>
-            <li><a href="#">Brownsburg, IN</a></li>
-            <li><a href="#">Plainfield, IN</a></li>
-            <li><a href="#">Indianapolis, IN</a></li>
-            <li><a href="#">Hendricks County</a></li>
+            <li><a href="#areas">Carmel, IN</a></li>
+            <li><a href="#areas">Fishers, IN</a></li>
+            <li><a href="#areas">Westfield, IN</a></li>
+            <li><a href="#areas">Noblesville, IN</a></li>
+            <li><a href="#areas">Avon, IN</a></li>
+            <li><a href="#areas">Brownsburg &amp; Plainfield, IN</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 Waymaker Renovations. All rights reserved.</p>
-        <p>Proudly serving Avon, Indiana and surrounding communities.</p>
+        <p>&copy; 2026 Waymaker Renovations LLC. All rights reserved.</p>
+        <p>Proudly serving the north &amp; west Indianapolis suburbs and surrounding communities.</p>
       </div>
     </div>
   </footer>
@@ -908,6 +1000,11 @@
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
       navbar.classList.toggle('scrolled', window.scrollY > 60);
+      // Swap navbar logo based on background
+      const navLogoImg = document.querySelector('.navbar .nav-logo img');
+      if (navLogoImg) {
+        navLogoImg.src = window.scrollY > 60 ? 'logo.png' : 'white-logo.png';
+      }
     });
 
     // Mobile nav
@@ -931,18 +1028,54 @@
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
     // Form submit
-    function handleSubmit(e) {
+    async function handleSubmit(e) {
       e.preventDefault();
-      const btn = e.target.querySelector('button[type="submit"]');
-      btn.innerHTML = 'Message Sent! ✓';
-      btn.style.background = '#2d5e47';
+      const form = e.target;
+      const btn = form.querySelector('button[type="submit"]');
+      const originalHTML = btn.innerHTML;
+
+      // Loading state
+      btn.innerHTML = 'Sending…';
       btn.disabled = true;
-      setTimeout(() => {
-        btn.innerHTML = 'Request Free Estimate <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';
-        btn.style.background = '';
-        btn.disabled = false;
-        e.target.reset();
-      }, 3000);
+
+      const data = {
+        firstName: form.firstName.value,
+        lastName:  form.lastName.value,
+        email:     form.email.value,
+        phone:     form.phone.value,
+        service:   form.service.value,
+        message:   form.message.value,
+      };
+
+      try {
+        const res = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data),
+        });
+        const result = await res.json();
+
+        if (result.success) {
+          btn.innerHTML = 'Message Sent! ✓';
+          btn.style.background = '#21304e';
+          form.reset();
+          setTimeout(() => {
+            btn.innerHTML = originalHTML;
+            btn.style.background = '';
+            btn.disabled = false;
+          }, 4000);
+        } else {
+          throw new Error(result.error || 'Unknown error');
+        }
+      } catch (err) {
+        btn.innerHTML = 'Something went wrong — please call us directly';
+        btn.style.background = '#c0392b';
+        setTimeout(() => {
+          btn.innerHTML = originalHTML;
+          btn.style.background = '';
+          btn.disabled = false;
+        }, 5000);
+      }
     }
 
     // Smooth scroll for anchor links
