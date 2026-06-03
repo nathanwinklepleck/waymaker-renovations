@@ -215,7 +215,7 @@
     .service-bg-deck { background-image: url('photos/whole-house/outdoor-living.jpg'); }
     .service-bg-paint { background-image: url('photos/whole-house/painting.jpeg'); }
     .service-bg-handyman { background-image: url('photos/whole-house/handyman.jpeg'); }
-    .service-bg-planning { background-image: url('photos/whole-house/staging.jpeg'); }
+    .service-bg-planning { background-image: url('photos/whole-house/design.jpeg'); }
 
     /* ===== ABOUT ===== */
     .about { background: var(--bg-warm); }
@@ -400,6 +400,22 @@
       align-items: center; font-size: .85rem; flex-wrap: wrap; gap: 16px;
     }
 
+    /* ===== FLOATING ESTIMATE CTA ===== */
+    .floating-estimate-cta {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 1200;
+      box-shadow: 0 12px 30px rgba(33,48,78,.32);
+      border-radius: 999px;
+      padding: 14px 22px;
+      font-size: .95rem;
+      font-weight: 700;
+    }
+    .floating-estimate-cta:hover {
+      transform: translateY(-3px);
+    }
+
     /* ===== MOBILE NAV ===== */
     .mobile-nav {
       display: none; position: fixed; inset: 0; background: var(--primary);
@@ -445,6 +461,13 @@
       .footer-grid { grid-template-columns: 1fr; }
       .trust-items { gap: 24px; }
       .cta-phone { font-size: 1.5rem; }
+      .floating-estimate-cta {
+        left: 16px;
+        right: 16px;
+        bottom: 14px;
+        justify-content: center;
+        border-radius: 12px;
+      }
     }
   </style>
 </head>
@@ -921,6 +944,10 @@
       </div>
     </div>
   </footer>
+
+  <a href="#contact" class="btn btn-primary floating-estimate-cta" aria-label="Jump to free estimate form">
+    Get Free Estimate
+  </a>
 
   <!-- ===== JAVASCRIPT ===== -->
   <script>
