@@ -157,8 +157,10 @@
     .trust-icon {
       width: 44px; height: 44px; border-radius: 50%;
       background: var(--primary); display: flex; align-items: center; justify-content: center;
+      transition: transform .25s ease;
     }
     .trust-icon svg { width: 20px; height: 20px; fill: var(--accent); }
+    .trust-item:hover .trust-icon { transform: scale(1.1); }
 
     /* ===== SERVICES ===== */
     .services { background: #fff; }
@@ -196,7 +198,7 @@
     .service-bg-flooring { background-image: url('photos/whole-house/fireplace.jpeg'); }
     .service-bg-trim { background-image: url('photos/whole-house/trim-finish-carpentry.jpeg'); }
     .service-bg-tile { background-image: url('photos/whole-house/backsplash.jpeg'); }
-    .service-bg-deck { background-image: url('photos/whole-house/deck.jpg'); }
+    .service-bg-deck { background-image: url('photos/whole-house/outdoor-living.jpg'); }
     .service-bg-paint { background-image: url('photos/whole-house/painting.jpeg'); }
     .service-bg-handyman { background-image: url('photos/whole-house/handyman.jpeg'); }
     .service-bg-planning { background-image: url('photos/whole-house/staging.jpeg'); }
@@ -225,8 +227,10 @@
     .about-feature-icon {
       width: 40px; height: 40px; min-width: 40px; border-radius: 10px;
       background: var(--primary); display: flex; align-items: center; justify-content: center;
+      transition: transform .25s ease;
     }
     .about-feature-icon svg { width: 20px; height: 20px; fill: var(--accent); }
+    .about-feature:hover .about-feature-icon { transform: scale(1.1); }
     .about-feature h4 { font-size: 1rem; font-weight: 700; color: var(--primary); margin-bottom: 4px; }
     .about-feature p { font-size: .9rem; color: var(--text-muted); }
 
@@ -341,8 +345,10 @@
     .contact-detail-icon {
       width: 44px; height: 44px; min-width: 44px; border-radius: 10px;
       background: var(--bg-warm); display: flex; align-items: center; justify-content: center;
+      transition: transform .25s ease;
     }
     .contact-detail-icon svg { width: 20px; height: 20px; fill: var(--primary); }
+    .contact-detail:hover .contact-detail-icon { transform: scale(1.1); }
     .contact-detail h4 { font-size: .85rem; font-weight: 700; color: var(--primary); margin-bottom: 2px; }
     .contact-detail p { font-size: .95rem; color: var(--text-muted); }
     .contact-form { background: var(--bg-warm); border-radius: 16px; padding: 40px; }
@@ -534,12 +540,10 @@
       </div>
       <div class="services-grid">
         <div class="service-card service-bg-kitchen fade-up">
-          <div class="service-badge">Most Popular</div>
           <h3>Kitchen Remodels</h3>
           <p>Full remodels or targeted updates with better flow, storage, and everyday function.</p>
         </div>
         <div class="service-card service-bg-bathroom fade-up">
-          <div class="service-badge">Most Popular</div>
           <h3>Bathroom Remodels</h3>
           <p>Clean, modern bathrooms with quality tile, fixtures, and practical layout improvements.</p>
         </div>
